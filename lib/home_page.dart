@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:popquizz/ui/add_quizpage.dart';
+import 'package:popquizz/add_quizpage.dart';
+import 'package:http/http.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,6 +23,9 @@ class _HomePageState extends State<HomePage> {
               },
               icon: Icon(Icons.add))
         ],
+      ),
+      body: Column(
+        children: [],
       ),
     );
   }
