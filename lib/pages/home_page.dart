@@ -38,24 +38,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Quizz'),
-          centerTitle: true,
-          backgroundColor: Colors.black,
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const AddQuizPage()));
-                },
-                icon: const Icon(Icons.add))
-          ],
-        ),
         body: loading ? _buildLoading(context) : _buildScreen(context));
   }
 
   Widget _buildScreen(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quizz'),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const AddQuizPage()));
+              },
+              icon: const Icon(Icons.add))
+        ],
+      ),
+      body: GridView.count(crossAxisCount: 1),
+    );
   }
 
   Widget _buildLoading(BuildContext context) {

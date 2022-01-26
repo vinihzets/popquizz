@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:popquizz/models/question_model.dart';
+import 'package:popquizz/pages/formulary_page.dart';
 import 'package:popquizz/repositories/question_repository.dart';
 
 class AddQuizPage extends StatefulWidget {
@@ -20,15 +21,15 @@ class _AddQuizPageState extends State<AddQuizPage> {
       ),
       body: Column(
         children: [
-          TextField(
-            decoration:
-                const InputDecoration(labelText: "Nome do questionario"),
+          const TextField(
+            decoration: InputDecoration(labelText: "Nome do questionario"),
           ),
           ElevatedButton(
             onPressed: () => setState(() {
-              Questionary;
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FormularyPage()));
             }),
-            child: Text('Adicionar Questionario!!'),
+            child: const Text('Adicionar Questionario!!'),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.red)),
           ),
