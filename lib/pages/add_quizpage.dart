@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:popquizz/models/question_model.dart';
+import 'package:popquizz/repositories/question_repository.dart';
 
 class AddQuizPage extends StatefulWidget {
   const AddQuizPage({Key? key}) : super(key: key);
@@ -8,14 +10,6 @@ class AddQuizPage extends StatefulWidget {
 }
 
 class _AddQuizPageState extends State<AddQuizPage> {
-  final quizzController = TextEditingController();
-  List _toQuizzList = [];
-  void _addQuizzList() {
-    Map<String, dynamic> newQuizz = Map();
-    newQuizz["text"] = quizzController.text;
-    _toQuizzList.add(newQuizz);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +21,13 @@ class _AddQuizPageState extends State<AddQuizPage> {
       body: Column(
         children: [
           TextField(
-            controller: quizzController,
             decoration:
                 const InputDecoration(labelText: "Nome do questionario"),
           ),
           ElevatedButton(
-            onPressed: _addQuizzList,
+            onPressed: () => setState(() {
+              Questionary;
+            }),
             child: const Text(
               'Adicionar Questionario',
             ),

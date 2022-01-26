@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildContent(BuildContext context) {
     return Column(
-      children: [AppBar(), Text('XD')],
+      children: [AppBar(), Text('teste')],
     );
   }
 
