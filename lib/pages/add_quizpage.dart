@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:popquizz/pages/home_page.dart';
 // import 'package:popquizz/models/question_model.dart';
 // import 'package:popquizz/pages/home_page.dart';
 // import 'package:popquizz/repositories/question_repository.dart';
@@ -12,16 +13,12 @@ class AddQuizPage extends StatefulWidget {
 }
 
 class _AddQuizPageState extends State<AddQuizPage> {
-  TextEditingController question1Controller = TextEditingController();
-  TextEditingController question2Controller = TextEditingController();
-  TextEditingController question3Controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Novo Quizz!'),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.black,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -32,11 +29,14 @@ class _AddQuizPageState extends State<AddQuizPage> {
             _buildQuestion2(),
             _buildQuestion3(),
             ElevatedButton(
-              onPressed: () => setState(() {}),
+              onPressed: () => setState(() {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => HomePage()));
+              }),
               child: const Text('Adicionar Questionario!!'),
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.red)),
+                      MaterialStateProperty.all<Color>(Colors.black)),
             ),
           ],
         ),
