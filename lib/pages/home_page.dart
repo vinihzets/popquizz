@@ -11,9 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController namequestionsController = TextEditingController();
-  TextEditingController questionsController = TextEditingController();
-
   final List<Questionary> questionaries = [];
   late QuestionsRepository repository;
   late bool loading;
@@ -58,9 +55,6 @@ class _HomePageState extends State<HomePage> {
               },
               icon: const Icon(Icons.add))
         ],
-      ),
-      body: GridView.count(
-        crossAxisCount: 1,
       ),
     );
   }

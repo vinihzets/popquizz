@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:popquizz/models/question_model.dart';
 import 'package:popquizz/pages/home_page.dart';
 import 'package:popquizz/repositories/question_repository.dart';
@@ -11,8 +12,8 @@ class AddQuizPage extends StatefulWidget {
 }
 
 class _AddQuizPageState extends State<AddQuizPage> {
-  TextEditingController namequestionsController = TextEditingController();
-  TextEditingController questionsController = TextEditingController();
+  late String _question;
+  late String _nquestion;
 
   @override
   Widget build(BuildContext context) {
@@ -25,29 +26,10 @@ class _AddQuizPageState extends State<AddQuizPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TextField(
-              controller: namequestionsController,
-              decoration: InputDecoration(labelText: "Nome do questionario"),
-            ),
-            Padding(
-              child: TextField(
-                controller: questionsController,
-                decoration: InputDecoration(labelText: "Questoes"),
-              ),
-              padding: EdgeInsets.only(top: 40.0),
-            ),
-            TextField(
-              controller: questionsController,
-              decoration: InputDecoration(labelText: "Questoes"),
-            ),
-            TextField(
-              controller: questionsController,
-              decoration: InputDecoration(labelText: "Questoes"),
-            ),
-            TextField(
-              controller: questionsController,
-              decoration: InputDecoration(labelText: "Questoes"),
-            ),
+            _buildNameQuestions(),
+            _buildQuestion1(),
+            _buildQuestion2(),
+            _buildQuestion3(),
             ElevatedButton(
               onPressed: () => setState(() {}),
               child: const Text('Adicionar Questionario!!'),
@@ -60,4 +42,32 @@ class _AddQuizPageState extends State<AddQuizPage> {
       ),
     );
   }
+}
+
+Widget _buildNameQuestions() {
+  return TextFormField(
+    decoration: InputDecoration(labelText: 'Nome do questionario'),
+    keyboardType: TextInputType.text,
+  );
+}
+
+Widget _buildQuestion1() {
+  return TextFormField(
+    decoration: InputDecoration(labelText: 'Questao 1'),
+    keyboardType: TextInputType.text,
+  );
+}
+
+Widget _buildQuestion2() {
+  return TextFormField(
+    decoration: InputDecoration(labelText: 'Questao 2'),
+    keyboardType: TextInputType.text,
+  );
+}
+
+Widget _buildQuestion3() {
+  return TextFormField(
+    decoration: InputDecoration(labelText: 'Questao 3'),
+    keyboardType: TextInputType.text,
+  );
 }
