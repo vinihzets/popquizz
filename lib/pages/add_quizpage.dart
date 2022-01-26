@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:popquizz/pages/home_page.dart';
 
 class AddQuizPage extends StatefulWidget {
   const AddQuizPage({Key? key}) : super(key: key);
@@ -21,7 +20,7 @@ class _AddQuizPageState extends State<AddQuizPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Novo Quizz!'),
+        title: const Text('Novo Quizz!'),
         backgroundColor: Colors.red,
         centerTitle: true,
       ),
@@ -29,11 +28,12 @@ class _AddQuizPageState extends State<AddQuizPage> {
         children: [
           TextField(
             controller: quizzController,
-            decoration: InputDecoration(labelText: "Nome do questionario"),
+            decoration:
+                const InputDecoration(labelText: "Nome do questionario"),
           ),
           ElevatedButton(
             onPressed: _addQuizzList,
-            child: Text(
+            child: const Text(
               'Adicionar Questionario',
             ),
             style: ButtonStyle(

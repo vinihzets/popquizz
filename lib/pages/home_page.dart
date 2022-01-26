@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:popquizz/models/question_model.dart';
 import 'package:popquizz/pages/add_quizpage.dart';
@@ -47,8 +45,8 @@ class _HomePageState extends State<HomePage> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => AddQuizPage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AddQuizPage()));
                 },
                 icon: const Icon(Icons.add))
           ],
@@ -57,7 +55,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildContent(BuildContext context) {
-    return Container();
+    return Column(
+      children: [AppBar(), Text('XD')],
+    );
   }
 
   Widget _buildLoading(BuildContext context) {
