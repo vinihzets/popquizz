@@ -51,16 +51,14 @@ class _HomePageState extends State<HomePage> {
                 icon: const Icon(Icons.add))
           ],
         ),
-        body: loading ? _buildLoading(context) : _buildContent(context));
+        body: loading ? _buildLoading(context) : _buildScreen(context));
   }
 
-  Widget _buildContent(BuildContext context) {
-    return Column(
-      children: [AppBar(), Text('teste')],
-    );
+  Widget _buildScreen(BuildContext context) {
+    return Scaffold();
   }
 
   Widget _buildLoading(BuildContext context) {
-    return const Center(child: CircularProgressIndicator(color: Colors.red));
+    return const Center(child: CircularProgressIndicator(color: Colors.black));
   }
 }

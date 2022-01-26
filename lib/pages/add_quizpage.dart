@@ -28,9 +28,7 @@ class _AddQuizPageState extends State<AddQuizPage> {
             onPressed: () => setState(() {
               Questionary;
             }),
-            child: const Text(
-              'Adicionar Questionario',
-            ),
+            child: Text('Adicionar Questionario!!'),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.red)),
           ),
