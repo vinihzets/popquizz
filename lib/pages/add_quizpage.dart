@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:popquizz/pages/home_page.dart';
-// import 'package:popquizz/models/question_model.dart';
-// import 'package:popquizz/pages/home_page.dart';
-// import 'package:popquizz/repositories/question_repository.dart';
+import 'package:popquizz/models/question_model.dart';
+import 'package:popquizz/repositories/question_repository.dart';
 
 class AddQuizPage extends StatefulWidget {
   const AddQuizPage({Key? key}) : super(key: key);
