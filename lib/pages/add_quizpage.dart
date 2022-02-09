@@ -29,8 +29,8 @@ class _AddQuizPageState extends State<AddQuizPage> {
             _buildQuestion3(),
             ElevatedButton(
               onPressed: () => setState(() {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => HomePage()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const HomePage()));
               }),
               child: const Text('Adicionar Questionario!!'),
               style: ButtonStyle(

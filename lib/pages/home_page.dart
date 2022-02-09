@@ -53,10 +53,44 @@ class _HomePageState extends State<HomePage> {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const AddQuizPage()));
               },
-              icon: const Icon(Icons.add))
+              icon: const Icon(Icons.add)),
+          FutureBuilder(
+            future: _fetchQuestionaries(),
+            builder: (context, snapshot) {
+              switch (snapshot.connectionState) {
+                case ConnectionState.none:
+                case ConnectionState.waiting:
+                  return Container(
+                    alignment: Alignment.center,
+                    width: 50.0,
+                    height: 70.0,
+                    child: const CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+                      strokeWidth: 5.0,
+                    ),
+                  );
+                default:
+                  if (snapshot.hasError) {
+                    return Container();
+                  } else {
+                    return _createQuizzList(context, snapshot);
+                  }
+              }
+            },
+          )
         ],
       ),
     );
+  }
+
+  Widget _createQuizzList(BuildContext context, AsyncSnapshot snapshot) {
+    return ListView.builder(itemBuilder: (context, index) {
+      return GestureDetector(
+        child: ListTile(
+          leading: Icon(Icons.library_books),
+        ),
+      );
+    });
   }
 
   Widget _buildLoading(BuildContext context) {
